@@ -6,24 +6,25 @@
   "scripts": {
     "test": "mocha",
     "start": "node app.js"
-
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdunc/virtual-museum.git"
+    "url": "git+https://github.com/jdunc/HeroAnywhere.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jdunc/virtual-museum/issues"
+    "url": "https://github.com/jdunc/HeroAnywhere/issues"
   },
-  "homepage": "https://github.com/jdunc/virtual-museum#readme",
+  "homepage": "https://github.com/jdunc/HeroAnywhere#readme",
   "dependencies": {
     "bcrypt-as-promised": "^1.1.0",
     "body-parser": "^1.15.2",
     "chai": "^3.5.0",
+    "connect-pg-simple": "^4.2.1",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
+    "express-device": "^0.4.2",
     "express-fileupload": "0.0.5",
     "express-form-data": "^1.0.1",
     "knex": "^0.12.6",

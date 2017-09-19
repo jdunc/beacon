@@ -1,0 +1,351 @@
+*{
+  box-sizing: border-box;
+}
+.title{
+  position: relative;
+  top: 140px;
+  left: 30px;
+  width: 539px;
+  overflow: hidden;
+  padding-left: 30px;
+  padding-top:15px;
+}
+.textPaddingColor{
+  z-index: 4;
+  position: absolute;
+  height: inherit;
+  width: 10px;
+  background-color: #3023A5;
+}
+.titleText {
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+	font-size: 48px;
+	font-weight: 500;
+	line-height: 60px;
+  background: #3023A5;
+  display: inline;
+  padding: 15px;
+  box-shadow: 30px 0 0 #3023A5, -30px 0 0 #3023A5;
+  clear: both;
+  margin-left: -15px;
+  letter-spacing: 2px;
+}
+.learnMore{
+  position: absolute;
+  top: 361px;
+  left: 30px;
+  display: block;
+  clear: both;
+  background-color: rgba(0,0,0,0);
+  padding: 15px;
+  border: 1px solid #3023A5;
+  font-weight: bold;
+  font-size: 14px;
+  color: #3023A5;
+}
+.brand-logo{
+  position: relative;
+  top: 37px;
+  left: 30px;
+  height: auto;
+  width: 171px;
+  z-index: 0;
+}
+.header{
+  position: absolute;
+  width: 1024px;
+  height: 125px;
+  z-index:5;
+}
+.about{
+  position: absolute;
+  left: 640px;
+  top: 55px;
+  font-size: 14px;
+  color: #A5A5A5;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+}
+.login{
+  position: absolute;
+  left: 712px;
+  top: 55px;
+  font-size: 14px;
+  color: #2E1AA8;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  font-weight: 500;
+}
+.beacon{
+  z-index:15;
+  position: absolute;
+  left: 793px;
+  top: 36px;
+  height: 54px;
+  width: 190px;
+  background-color: #B4FFDF;
+  color: #3023A5;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+.content{
+  clear: both;
+  position: absolute;
+}
+.title{
+  float: left;
+}
+.articleImage{
+  position: absolute;
+  height: 400px;
+  width: 620px;
+  left: 363px;
+  top: 125px;
+  z-index: -1;
+}
+.container{
+  z-index: 0;
+  position:relative;
+  width: 1024px;
+  height: 1000px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+}
+.gray-background {
+  z-index: -2;
+  position: absolute;
+  top: 475px;
+	height: 154px;
+  width: 1024px;
+	max-width: 1024px;
+	background-color: #F6F6F6;
+}
+.modal-content{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: -260px;
+  width: 1024px;
+  height: 568px;
+  background-color: #F6F6F6;
+}
+.googleSignup{
+  position: absolute;
+  left: 362px;
+  top: 126.03px;
+	height: 54px;
+	width: 300px;
+	background-color: #FFFFFF;
+	/*box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5) !important*/
+}
+.g-signin2{
+  height: 54px;
+  width: 300px;
+}
+.linkedinSignup{
+  position: absolute;
+    left: 362px;
+    top: 259.34px;
+  	height: 54px;
+  	width: 300px;
+  	background-color: #007EBB;
+  	box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5) !important;
+}
+.linkedinSignup:hover{
+  box-shadow: 0px 0px 4px 2px rgba(185,207,245,1) !important;
+}
+.facebookSignup{
+  position: absolute;
+    left: 362px;
+    top: 194.22px;
+  	height: 54px;
+  	width: 300px;
+  	background-color: #4267B2;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5) !important;
+}
+.facebookSignup:hover{
+  box-shadow: 0px 0px 4px 2px rgba(185,207,245,1) !important;
+}
+.fb-login-button{
+top:7px;
+}
+.emailSignup{
+  position: absolute;
+  top: 328.86px;
+  left:400.27px;
+	height: 14px;
+	width: 223.46px;
+	color: #000000;
+	font-family: "Acumin Pro";
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+	text-align: center;
+}
+.emailSignup > a{
+  color: black;
+
+}
+.googleLogo {
+  position: absolute;
+  left:10px;
+  top:10px;
+	height: 32px;
+	width: 31px;
+}
+.googleText{
+	height: 18px;
+	width: 223.46px;
+	color: #000000;
+	font-family: "Acumin Pro";
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+  position: absolute;
+  left: 60px;
+  top: 19px;
+}
+.fbText{
+	height: 18px;
+	width: 223.46px;
+	color: white;
+	font-family: "Acumin Pro";
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+  position: absolute;
+  left: 60px;
+  top: 19px;
+}
+.linkedinText{
+	height: 18px;
+	width: 223.46px;
+	color: white;
+	font-family: "Acumin Pro";
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+  position: absolute;
+  left: 60px;
+  top: 19px;
+}
+.fblogo {
+  position: absolute;
+  left:10px;
+  top:10px;
+  	height: 31.55px;
+  	width: 31.55px;
+}
+.linkedinlogo {
+  position: absolute;
+  left:10px;
+  top:10px;
+  	height: 31.55px;
+  	width: 31.55px;
+}
+.form{
+	height: 112px;
+	width: 463px;
+  position: absolute;
+  left: 282px;
+  top: 138px;
+}
+.firstname{
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 220px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+.lastname{
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 220px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+margin-left: 10px;
+}
+.emailAddress{
+  margin-top: 30px;
+  margin-bottom: 30px;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 460px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+.password{
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 460px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+.submitEmailForm{
+	height: 54px;
+	width: 121.08px;
+	background-color: #2E1AA8;
+  left: 170.46px;
+  top:178.29px;
+  position: absolute;
+  color: #B4FFDF;
+  font-family: "Acumin Pro";
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 34px;
+  text-align: center;
+  padding-top: 8px;
+}
+.largeFontToggle:hover {
+  /*border: 1px solid black;*/
+  font-size: 16px;
+}
+.linkedinSignup:hover, .linkedinlogo:hover, .linkedinText:hover {
+  cursor: pointer;
+}
+.successHeading{
+  font-variant: small-caps;
+  color: #2E1AA8;
+  font-family: "Acumin Pro";
+  text-align: center;
+}
+.successBody{
+  padding: 75px;
+}
+.addToProfile{
+  z-index:15;
+  position: absolute;
+  height: 54px;
+  width: 190px;
+  left: 417px;
+  background-color: #B4FFDF;
+  color: #3023A5;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .header {	
+    height: 60px;
+    width: 320px;
+    background-color: #FFFFFF;
+  }
+  
+}

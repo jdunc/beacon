@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <title>BEACON - Disaster Relief Volunteer Platform</title>
+    <meta name="description" content="Beacon is a modern platform that connects citizen volunteers of all skills and backgrounds with the effective hands on relief agencies that need help during disasters.">
+    <meta name="google-signin-client_id" content="376004463646-7pt7rkejie6n4gr7dc8suspa1s2m95tr.apps.googleusercontent.com">
+
+    <!-- adobe fontkit -->
+    <script src="https://use.typekit.net/xho6okb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+    api_key:   86cqfimv60rbpi
+    authorize: 'true'
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/css/bootstrap-slider.css">
+
+    <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/profile-desktop.css">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1727317440903912',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.10'
+        });
+        FB.AppEvents.logPageView();  
+        FB.getLoginStatus(function(response) {
+           statusChangeCallback(response);
+         }); 
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+       
+
+        function statusChangeCallback(response){
+          FB.api('/me/picture?height=300', function(response) {
+            console.log(response);
+          })
+        }
+        
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+        
+    </script>
+<div class="container">
+  <div class="header">
+    <img class="brand-logo" src="./img/beacon-logo.png" alt="">
+    <div class="volunteer largeFontToggle menuButtons">VOLUNTEER</div>
+    <div class="training largeFontToggle menuButtons">TRAINING</div>
+    <div class="profile largeFontToggle menuButtons">PROFILE</div>
+  </div>
+  <div class="content">
+    <div class="profileInfo">
+      <div class="profileStatus">
+        <img class="profileImage" src="https://scontent.xx.fbcdn.net/v/t1.0-1/s320x320/14670841_2869764311488_317354167427009217_n.jpg?oh=36106cb1e43ef756d31f82778851feae&oe=5A5EBC86" alt="">
+              <div class="c100 p25 profileCircle">
+                <div class="slice">
+                  <div class="bar profileBar"></div>
+                  <div class="fill"></div>
+              </div>
+            </div>
+      </div>
+      <div class="profileStatusProgress"></div>
+      <div class="welcomeUser">
+        Welcome Jordan!
+      </div>
+      <div class="subtitle">
+        Sharing a little more info will make you more valuable to those who need help when disaster strikes.
+      </div>
+    </div>
+    <div class="infoBox basicInfo">
+      <div class="infoText">Basic Info</div>
+      <div class="arrow"> > </div>
+    </div>
+    <div class="infoBox mySkills">
+      <div class="infoText">My Skills</div>
+      <div class="arrow"> > </div>
+    </div>
+    <div class="infoBox myResources">
+      <div class="infoText">My Resources</div>
+      <div class="arrow"> > </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- basicInfoPartOne modal -->
+<div class="modal fade" id="basicInfoModalPartOne" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title basicInfoTitle" id="exampleModalLabel">Basic Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="basicInfoOneBar"></div>
+        <div class="form">
+          <label for="" class="firstnamelabel">First Name</label>
+          <input class="firstname" type="text" name="firstname" value="" placeholder="First Name">
+          <label for="" class="lastnamelabel">Last Name</label>
+          <input class="lastname" type="text" name="" value="" placeholder="Last Name">
+          <label for="" class="emailaddresslabel">Email Address</label>
+          <input class="emailAddress" type="text" name="" value="" placeholder="Email Address">
+          <label for="" class="birthdaylabel">Birth Date</label>
+          <input class="birthday" type="date" value="2011-08-19" id="birthdayInput">
+          <label for="" class="genderlabel">Gender</label>
+          <input class="genderInput" type="text" placeholder="Gender" id="genderInput">
+          <label for="" class="phonelabel">Phone Number</label>
+          <input class="firstPhoneInput" type="text" value="1" maxlength="1" id="firstPhoneInput">
+          <input class="secondPhoneInput" type="text" placeholder="(555)" maxlength="3" id="firstPhoneInput">
+          <input class="thirdPhoneInput" type="text" placeholder="555" maxlength="3" id="firstPhoneInput">
+          <input class="fourthPhoneInput" type="text" placeholder="5555" maxlength="4" id="firstPhoneInput">
+          <div class="canwetextyou">Can We Text You In The Event of a Disaster?</div>
+          <div class="yesRectangle">Y</div>
+          <div class="noRectangle">N</div>
+          <button type="button" class="basicInfoOneNext largeFontToggle">NEXT</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end basicInfoPartOne modal -->
+
+<!-- basicInfoPartTwo modal -->
+<div class="modal fade" id="basicInfoModalPartTwo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title basicInfoTitle" id="exampleModalLabel">Basic Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="basicInfoOneBar basicInfoTwoBar"></div>
+        <div class="form">
+          <label for="" class="firstnamelabel">Street Address</label>
+          <input class="streetAddress" type="text" name="firstname" value="" placeholder="Street Address">
+          <label for="" class="emailaddresslabel">City</label>
+          <input class="city" type="text" name="" value="" placeholder="City">
+          <label for="" class="statelabel">State</label>
+          <div class="dropdown">
+          <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option selected disabled>State</option>
+            <option>AK</option>
+            <option>AL</option>
+            <option>AR</option>
+            <option>AS</option>
+            <option>AZ</option>
+            <option>CA</option>
+            <option>CO</option>
+            <option>CT</option>
+            <option>DC</option>
+            <option>DE</option>
+            <option>FL</option>
+            <option>FM</option>
+            <option>GA</option>
+            <option>GU</option>
+            <option>HI</option>
+            <option>IA</option>
+            <option>ID</option>
+            <option>IL</option>
+            <option>IN</option>
+            <option>KS</option>
+            <option>KY</option>
+            <option>LA</option>
+            <option>MA</option>
+            <option>MD</option>
+            <option>ME</option>
+            <option>MH</option>
+            <option>MI</option>
+            <option>MN</option>
+            <option>MO</option>
+            <option>MP</option>
+            <option>MS</option>
+            <option>MT</option>
+            <option>NC</option>
+            <option>ND</option>
+            <option>NE</option>
+            <option>NH</option>
+            <option>NJ</option>
+            <option>NM</option>
+            <option>NV</option>
+            <option>NY</option>
+            <option>OH</option>
+            <option>OK</option>
+            <option>OR</option>
+            <option>PA</option>
+            <option>PR</option>
+            <option>PW</option>
+            <option>RI</option>
+            <option>SC</option>
+            <option>SD</option>
+            <option>TN</option>
+            <option>TX</option>
+            <option>UT</option>
+            <option>VA</option>
+            <option>VI</option>
+            <option>VT</option>
+            <option>WA</option>
+            <option>WI</option>
+            <option>WV</option>
+            <option>WY</option>
+          </select>
+          </div>
+          <label for="" class="zipcodelabel">Zip Code</label>
+          <input class="zipcode" type="text" name="" value="" placeholder="Zip Code">
+          <p class="slider-label">How far are you willing to travel?</p>
+          <input id="distanceSlider" data-slider-id='distanceSlider' type="text" data-slider-min="0" data-slider-max="500" data-slider-step="5" data-slider-value="50"/>
+          <button type="button" class="basicInfoTwoNext largeFontToggle">NEXT</button>
+          <button type="button" class="basicInfoTwoBack largeFontToggle">BACK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end basicInfoPartTwo modal -->
+
+<!-- basicInfoPartThree modal -->
+<div class="modal fade" id="basicInfoModalPartThree" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title basicInfoTitle" id="exampleModalLabel">Basic Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="basicInfoOneBar basicInfoThreeBar"></div>
+        <div class="form">
+          <label for="" class="licenselabel">Drivers License Number</label>
+          <p class="license-label">Become a verified volunteer by providing your drivers license information for a background check</p>
+          <input class="licenseInput" type="text" name="" value="" placeholder="DL Number">
+          <label for="" class="statelabel2">State</label>
+          <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option selected disabled>State</option>
+            <option>AK</option>
+            <option>AL</option>
+            <option>AR</option>
+            <option>AS</option>
+            <option>AZ</option>
+            <option>CA</option>
+            <option>CO</option>
+            <option>CT</option>
+            <option>DC</option>
+            <option>DE</option>
+            <option>FL</option>
+            <option>FM</option>
+            <option>GA</option>
+            <option>GU</option>
+            <option>HI</option>
+            <option>IA</option>
+            <option>ID</option>
+            <option>IL</option>
+            <option>IN</option>
+            <option>KS</option>
+            <option>KY</option>
+            <option>LA</option>
+            <option>MA</option>
+            <option>MD</option>
+            <option>ME</option>
+            <option>MH</option>
+            <option>MI</option>
+            <option>MN</option>
+            <option>MO</option>
+            <option>MP</option>
+            <option>MS</option>
+            <option>MT</option>
+            <option>NC</option>
+            <option>ND</option>
+            <option>NE</option>
+            <option>NH</option>
+            <option>NJ</option>
+            <option>NM</option>
+            <option>NV</option>
+            <option>NY</option>
+            <option>OH</option>
+            <option>OK</option>
+            <option>OR</option>
+            <option>PA</option>
+            <option>PR</option>
+            <option>PW</option>
+            <option>RI</option>
+            <option>SC</option>
+            <option>SD</option>
+            <option>TN</option>
+            <option>TX</option>
+            <option>UT</option>
+            <option>VA</option>
+            <option>VI</option>
+            <option>VT</option>
+            <option>WA</option>
+            <option>WI</option>
+            <option>WV</option>
+            <option>WY</option>
+          </select>
+          <button type="button" class="basicInfoThreeFinish largeFontToggle">FINISH</button>
+          <button type="button" class="basicInfoThreeBack largeFontToggle">BACK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end basicInfoPartThree modal -->
+
+<!-- basicInfoPartThree modal -->
+<div class="modal fade" id="basicInfoModalFinished" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header finishHeader">
+        <button type="button" class="close finishClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body finished">
+        <div class="c100 p1 finishCircle">
+          <div class="slice finishSlice">
+            <div class="bar finishBar"></div>
+            <div class="fill finishFill"></div>
+        </div>
+      </div>
+      <div class="finishCircleFill">✓</div>
+      <div class="basicInfoThanks">
+        <p>Thanks for joining the community</p>
+        <p>"Coming together is a beginning. Keeping together is progress. Working together is success." -Henry Ford</p>
+      
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end basicInfoPartThree modal -->
+
+<!-- mySkills modal -->
+<div class="modal fade" id="mySkillsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content skills-modal-content container">
+      <div class="modal-header skills-modal-header">
+        <h5 class="modal-title mySkillsLabel" id="mySkillsLabel">My Skills</h5>
+        <button type="button" class="close skillsModalClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body skills-modal-body">
+        <div class="row statusBar statusBarOne"></div>
+          <div class="row descriptionRow">
+            <div class="col-md-12">
+              <p class="mySkillsDescription">
+                Please choose all the skills you have. <br>On the next page you can add custom skills.
+              </p>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12 skillsInputDiv">
+              <!-- <i class="fa fa-search" aria-hidden="true"></i><input class="skillsInput" type="search" name="" value="" placeholder="Search For Skills"> -->
+              <div class="row skillRow">
+                <div class="col-md-4 skillButton">
+                  Lift 20lbs
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 skillButton">
+                  Drive a Car
+                </div>
+              </div>
+              <div class="row skillRow">
+                <div class="col-md-4 skillButton">
+                  Search & Rescue
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 skillButton">
+                  Medical Assistance
+                </div>
+              </div>
+              <div class="row skillRow">
+                <div class="col-md-4 skillButton">
+                  Fire Safety
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 skillButton">
+                  Handle HazMat
+                </div>
+              </div>
+              <div class="row skillRow">
+                <div class="col-md-4 skillButton">
+                  Cooking
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 skillButton">
+                  CPR Certified
+                </div>
+              </div>
+            </div> 
+            <!-- end skills input -->
+          </div>
+          <!-- end skills row -->
+          <button type="button" class="mySkillsNext largeFontToggle">NEXT</button>
+      </div>
+      <!-- end modal body -->
+    </div>
+  </div>
+</div>
+<!-- end mySkills modal -->
+
+<!-- mySkills modal -->
+<div class="modal fade" id="mySkillsModalTwo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content skills-modal-content container">
+      <div class="modal-header skills-modal-header">
+        <h5 class="modal-title mySkillsLabel" id="mySkillsLabel">My Skills</h5>
+        <button type="button" class="close skillsModalClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body skills-modal-body">
+        <div class="row statusBar statusBarTwo"></div>
+          <div class="row descriptionRow">
+            <div class="col-md-12">
+              <p class="mySkillsDescription">
+                Please add additional custom disaster relief skills (10 max).
+              </p>
+            </div>
+
+          </div>
+          <div class="row searchColumn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" class="skillInputBar" placeholder="Add Your Skill Here"><i class="fa fa-plus-square addSkillButton" aria-hidden="true"></i>
+          </div>
+          <div class="skillsList">
+          </div>
+          <!-- end skills row -->
+          <button type="button" class="mySkillsFinish largeFontToggle">FINISH</button>
+      </div>
+      <!-- end modal body -->
+    </div>
+  </div>
+</div>
+<!-- end mySkills modal -->
+
+
+  </body>
+  <script>
+  $( document ).ready(()=>{
+    
+    //linkedin api calls here:
+      IN.User.authorize(function(){
+        getProfileData();
+      });
+    // Setup an event listener to make an API call once auth is complete
+    function onLinkedInLoad() {
+      IN.Event.on(IN, "auth", getProfileData);
+    }
+    // Handle the successful return from the API call
+    function onSuccess(data) {
+      console.log('linkedin api data: ', data);    
+    }
+    // Handle an error response from the API call
+    function onError(error) {
+      console.log(error);
+    }
+    
+    // Use the API call wrapper to request the member's basic profile data
+    function getProfileData() {
+      IN.API.Profile("me").fields("first-name", "last-name", "email-address", "id").result(onSuccess).error(onError);
+    }
+      
+  });
+  
+  $('#distanceSlider').slider({
+    tooltip: 'always',
+	  formatter: function(value) {
+      if(value===500){
+        return value + '+ Miles';    
+      }else{
+        return value + ' Miles';
+      }
+		
+	  }
+  });
+
+  $('.basicInfo').click(()=>{
+    $('#basicInfoModalPartOne').modal("show");
+  });
+  $('.mySkills').click(()=>{
+    $('#mySkillsModal').modal("show");
+  });
+
+  $('.yesRectangle').click(()=>{
+    $('.yesRectangle').css("color", "white");
+    $('.noRectangle').css("color", "#2E1AA8");
+    $('.yesRectangle').css("background-color", "#2E1AA8")
+    $('.noRectangle').css("background-color", "rgba(0,0,0,0)")
+  });
+  $('.noRectangle').click(()=>{
+    $('.noRectangle').css("color", "white");
+    $('.yesRectangle').css("color", "#2E1AA8");
+    $('.noRectangle').css("background-color", "#2E1AA8")
+    $('.yesRectangle').css("background-color", "rgba(0,0,0,0)")
+  });
+  $('.basicInfoOneNext').click(()=>{
+    $('#basicInfoModalPartTwo').removeClass("fade");
+    $('#basicInfoModalPartTwo').modal("show");
+    $('#basicInfoModalPartOne').modal("hide");
+  });
+  $('.basicInfoTwoBack').click(()=>{
+    $('#basicInfoModalPartOne').removeClass("fade");
+    $('#basicInfoModalPartOne').modal("show");
+    $('#basicInfoModalPartTwo').modal("hide");
+  });
+  $('.basicInfoTwoNext').click(()=>{
+    $('#basicInfoModalPartThree').removeClass("fade");
+    $('#basicInfoModalPartThree').modal("show");
+    $('#basicInfoModalPartTwo').modal("hide");
+  });
+  $('.basicInfoThreeBack').click(()=>{
+    $('#basicInfoModalPartTwo').modal("show");
+    $('#basicInfoModalPartThree').modal("hide");
+  });
+  $('.basicInfoThreeFinish').click(()=>{
+    $('#basicInfoModalFinished').removeClass("fade");
+    $('#basicInfoModalFinished').modal("show");
+    $('#basicInfoModalPartThree').modal("hide");
+    $('.basicInfo .infoText').html("Basic Info ✓");
+    let circle = $('.finishCircle');
+    $(circle).removeClass();
+    $(circle).addClass('c100');
+    $(circle).addClass('p1');
+    $(circle).addClass('finishCircle');
+    $($('.basicInfoThanks').children()[1]).text(`"Coming together is a beginning. Keeping together is progress. Working together is success." -Henry Ford`);
+    $($('.basicInfoThanks').children()[0]).text("Thanks for joining the community.");
+    loadFinishCheck(2);
+  });
+  $('.mySkillsNext').click(()=>{
+    $('#mySkillsModalTwo').removeClass("fade");
+    $('#mySkillsModalTwo').modal("show");
+    $('#mySkillsModal').modal("hide");
+  });
+  
+  
+  function loadFinishCheck(i){
+    $('.finishCircle').addClass(`p${i}`)
+    i++
+    if(i<101){
+      setTimeout(()=>{loadFinishCheck(i)}, 6);
+    }
+  }
+  
+  $(document).ready(()=>{
+    $('#mySkillsModalTwo').modal("show");
+  })
+  $('.skillButton').click((e)=>{
+    $(e.target).toggleClass("activeSkill");
+  })
+  
+  $('.addSkillButton').click(()=>{
+    var thisSkill = $('.skillInputBar').val();
+    if(thisSkill !== '' && $('.deleteSkill').length < 10){
+      $('.skillsList').append(`<p><i class="fa fa-minus-circle deleteSkill" aria-hidden="true"></i>&nbsp&nbsp${thisSkill}</p>`);
+      $('.skillInputBar').val('');
+      $('.skillInputBar').attr("placeholder", "Add Your Skill Here");
+    }
+  });
+  $('body').on('click', '.deleteSkill', function(e) {
+    $(e.target).parent().remove()
+  });
+  $('.mySkillsFinish').click(()=>{
+    $('#basicInfoModalFinished').removeClass("fade");
+    $('#basicInfoModalFinished').modal("show");
+    $('#mySkillsModalTwo').modal("hide");
+    $('.mySkills .infoText').html("My Skills ✓");
+    let circle = $('.finishCircle');
+    $(circle).removeClass();
+    $(circle).addClass('c100');
+    $(circle).addClass('p1');
+    $(circle).addClass('finishCircle');
+    $($('.basicInfoThanks').children()[1]).text(`"We rise by lifting others."`);
+    $($('.basicInfoThanks').children()[0]).text("Thanks for sharing your skills with us.");
+    loadFinishCheck(2);
+  });
+  
+  </script>
+</html>

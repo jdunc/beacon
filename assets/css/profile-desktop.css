@@ -1,0 +1,923 @@
+.container{
+  z-index: 0;
+  position:relative;
+  width: 1024px;
+  height: 1000px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+}
+.header {
+  position: absolute;
+	height: 85px;
+	width: 1024px;
+	background-color: #FFFFFF;
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  left: 0;
+  top:0;
+
+}
+.brand-logo {
+  position: absolute;
+	height: 40px;
+	width: auto;
+  left: 44px;
+  top: 22.5px;
+}
+.menuButtons {
+  display: block;
+  position: absolute;
+	color: #7D7D7D;
+	font-family: "Acumin Pro";
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+	text-align: center;
+}
+.volunteer {
+width: 87px;
+  left: 725px;
+  top: 36px;
+}
+.training {
+    width: 70px;
+  left: 832px;
+  top: 36px;
+}
+.profile {
+  width: 64px;
+  left: 918px;
+  top: 36px;
+}
+.profileInfo {
+  position:absolute;
+  height: 114px;
+  width: 374px;
+  top:76px;
+  left:48px;
+}
+.profileStatusBackround{
+  height:114px;
+  width:114px;
+  position:absolute;
+  transform:rotate(45deg);
+  top:5px;
+}
+.profileCircle{
+  background-color: #CED4ED;
+}
+.profileBar{
+  border-color: #2E1AA8 !important;
+}
+.profileImage{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  z-index:10;
+  top: 20px;
+  left: 20px;
+}
+.welcomeUser {
+	position: absolute;
+  height: 26px;
+	width: 210.41px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 26px;
+  left: 154px;
+  top: 8px;
+}
+.subtitle {
+  position: absolute;
+	height: 66px;
+	width: 220px;
+	color: #7D7D7D;
+	font-family: "Acumin Pro";
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 22px;
+  top: 41px;
+  left: 154px;
+}
+.infoBox {
+  position:absolute;
+	transform: scaleX(-1);
+	background: linear-gradient(270deg, #2E1AA8 0%, #5635CF 53.52%, #324FCC 100%);
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+  left:522px;
+  width: 502px;
+  height: 86px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.infoBox:hover {
+  filter: brightness(125%);
+}
+.infoBox:hover div {
+  font-size: 28px;
+}
+.basicInfo{
+  top:0px;
+}
+.mySkills{
+  top:99px;
+}
+.myResources{
+  top:199px;
+}
+.arrow {
+  position: absolute;
+  transform: scaleX(-1);
+	height: 42px;
+	width: 25px;
+  top:19px;
+	color: #FFFFFF;
+  font-size:28px;
+  font-weight: 100;
+  vertical-align: middle;
+
+}
+.infoText {
+  position: absolute;
+   transform: scaleX(-1);
+	height: 42px;
+  top:22px;
+  left:275px;
+  width: 200px;
+	color: #FFFFFF;
+	font-family: "Acumin Pro";
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 52px;
+  vertical-align: middle;
+}
+
+.content{
+  position:absolute;
+  left:0px;
+  top:85px;
+  width: 1024px;
+  height:285px;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+}
+
+/*basic info modal*/
+.modal-header{
+  background-color: white;
+  height: 81px;
+}
+.basicInfoOneBar {
+  margin-top: -15px;
+  margin-left: -15px;
+	box-sizing: border-box;
+	height: 4px;
+	width: 350px;
+	border: 3px solid #2E1AA8;
+}
+.basicInfoTwoBar {
+	width: 710px;
+}
+.basicInfoThreeBar {
+	width: 1022px;
+}
+.basicInfoTitle {
+	height: 26px;
+  width: 1000px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 26px;
+  vertical-align: center;
+	text-align: center;
+}
+.form{
+	height: 112px;
+	width: 463px;
+  position: absolute;
+  left: 282px;
+  top: 88px;
+}
+.firstname{
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 220px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+.lastname{
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 220px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+margin-left: 10px;
+}
+.emailAddress{
+  margin-top: 30px;
+  margin-bottom: 30px;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 460px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+.firstnamelabel {
+  position:absolute;
+	margin-top:-10px;
+  height: 20px;
+	width: 220px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 10px;
+}
+.lastnamelabel {
+  position:absolute;
+	margin-top:-10px;
+  margin-left: 10px;
+  height: 20px;
+	width: 220px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 10px;
+}
+.emailaddresslabel {
+  position:absolute;
+  top: 44px;
+  left:0px;
+  height: 20px;
+	width: 220px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 10px;
+}
+.birthdaylabel {
+  position:absolute;
+  top: 99px;
+  left:0px;
+  height: 20px;
+	width: 220px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 10px;
+}
+.genderlabel {
+  position:absolute;
+  top: 99px;
+  left: 160px;
+  height: 20px;
+	width: 220px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 10px;
+}
+.birthday{
+  position: absolute;
+  top: 121px;
+	height: 14px;
+	width: 140px;
+	color: #1A1A1A;
+	font-family: "Acumin Pro";
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+  background-color: #F6F6F6;
+  border: 0px;
+  border-bottom: 1px solid black;
+}
+.birthday::placeholder{
+  color: #1A1A1A;
+}
+.genderInput{
+position: absolute;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 110px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+top: 111px;
+left: 160px;
+}
+.phonelabel {
+  position:absolute;
+  top: 99px;
+  left: 295px;
+  height: 20px;
+	width: 220px;
+	color: #2E1AA8;
+	font-family: "Acumin Pro";
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 10px;
+}
+.firstPhoneInput{
+position: absolute;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 10px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+top: 111px;
+left: 295px;
+}
+.secondPhoneInput{
+position: absolute;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 40px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+top: 111px;
+left: 315px;
+}
+.thirdPhoneInput{
+position: absolute;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 40px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+top: 111px;
+left: 365px;
+}
+.fourthPhoneInput{
+position: absolute;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 40px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+top: 111px;
+left: 415px;
+}
+.basicInfoOneNext {
+  position: absolute;
+  left:365px;
+  top:255px;
+	height: 38.76px;
+	width: 89.64px;
+  background-color: #2E1AA8;
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+  padding-top:10px;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 17px;
+	text-align: center;
+  border: 0px;
+}
+.canwetextyou {
+  position: absolute;
+  top:182px;
+  left:0px;
+	height: 35px;
+	width: 380px;
+	color: #000000;
+	font-family: "Acumin Pro";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 18px;
+}
+.yesRectangle {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top:172px;
+  left:385px;
+	height: 35px;
+	width: 35px;
+	border: 1px solid #2E1AA8;
+	background-color: #2E1AA8;
+  color:white;
+}
+.noRectangle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top:172px;
+  left:420px;
+	height: 35px;
+	width: 35px;
+	border: 1px solid #2E1AA8;
+  color:#2E1AA8;
+}
+.streetAddress{
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 460px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+.city{
+  margin-top: 30px;
+  margin-bottom: 30px;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 140px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+#dropdownMenuButton{
+  width: 140px;
+  background-color: rgba(0,0,0,0);
+  color: #A5A5A5;
+  border-color: rgba(0,0,0,0);
+  border-bottom: 1px solid black;
+  font-family: "Acumin Pro";
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 15px;
+  border-radius: 0px;
+  padding-bottom: 3px;
+  padding-left: 0px;
+}
+.dropdown{
+  position: absolute;
+  top: 54px;
+  left: 155px;
+}
+.zipcode{
+  position: absolute;
+  margin-top: 30px;
+  margin-bottom: 30px;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 140px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+left:315px;
+}
+.zipcodelabel{
+  position:absolute;
+  top: 44px;
+  left:315px;
+  height: 20px;
+  width: 220px;
+  color: #2E1AA8;
+  font-family: "Acumin Pro";
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 10px;
+}
+.statelabel{
+  position:absolute;
+  top: 44px;
+  left:0px;
+  height: 20px;
+  width: 220px;
+  color: #2E1AA8;
+  font-family: "Acumin Pro";
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 10px;
+  left:155px;
+}
+.slider-label {
+  position: absolute;
+	height: 18px;
+	width: 284px;
+	color: #000000;
+	font-family: "Acumin Pro";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 18px;
+}
+.license-label {
+  position: absolute;
+  top:0px;
+	height: 18px;
+	width: 500px;
+	color: #000000;
+	font-family: "Acumin Pro";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 18px;
+}
+
+#distanceSlider{
+  position:absolute;
+  top:150px;
+  left:0px;
+  width: 461px;
+}
+.slider{
+}
+.slider-track{
+  background-color: rgba(46,26,168,0.2);
+}
+.slider.slider-horizontal .slider-track{
+  height: 3px;  
+}
+
+.slider-track, .slider-selection{
+  background-image: url();
+}
+.slider-handle{
+  background-image: url();
+  background-color: #2E1AA8;
+  margin-top: -4px;
+}
+.tooltip{
+  opacity: 1;
+  font-family: "Acumin Pro";
+  font-size: 14px;	
+  font-weight: 600;
+  margin-top: 20px !important;
+}
+.tooltip-inner{
+  color: #2E1AA8 !important;
+  background-color: rgba(0,0,0,0) !important;
+}
+.basicInfoTwoNext {
+  position: absolute;
+  left:365px;
+  top:255px;
+	height: 38.76px;
+	width: 89.64px;
+  background-color: #2E1AA8;
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+  padding-top:10px;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 17px;
+	text-align: center;
+  border: 0px;
+}
+.basicInfoTwoBack {
+  position: absolute;
+  left:0px;
+  top:255px;
+	height: 38.76px;
+	width: 89.64px;
+  background-color: #2E1AA8;
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+  padding-top:10px;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 17px;
+	text-align: center;
+  border: 0px;
+}
+.basicInfoThreeFinish {
+  position: absolute;
+  left:365px;
+  top:255px;
+	height: 38.76px;
+	width: 89.64px;
+  background-color: #2E1AA8;
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+  padding-top:10px;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 17px;
+	text-align: center;
+  border: 0px;
+}
+.basicInfoThreeBack {
+  position: absolute;
+  left:0px;
+  top:255px;
+	height: 38.76px;
+	width: 89.64px;
+  background-color: #2E1AA8;
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+  padding-top:10px;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 17px;
+	text-align: center;
+  border: 0px;
+}
+.licenseInput{
+  top:30px;
+  position:absolute;
+  margin-top: 30px;
+  margin-bottom: 30px;
+background-color: rgba(0,0,0,0);
+border: 0px;
+border-bottom: 1px solid black;
+width: 140px;
+color: #A5A5A5;
+font-family: "Acumin Pro";
+font-size: 14px;
+font-weight: 200;
+}
+#dropdownMenuButton2{
+  width: 140px;
+  position: absolute;
+  top: 56px;
+    left: 155px;
+  background-color: rgba(0,0,0,0);
+  color: #A5A5A5;
+  border-color: rgba(0,0,0,0);
+  border-bottom: 1px solid black;
+  font-family: "Acumin Pro";
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 15px;
+  border-radius: 0px;
+  padding-bottom: 3px;
+  padding-left: 0px;
+}
+.statelabel2{
+  position:absolute;
+  top: 50px;
+  height: 20px;
+  width: 220px;
+  color: #2E1AA8;
+  font-family: "Acumin Pro";
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 10px;
+  left:155px;
+}
+.licenselabel{
+  position:absolute;
+  top: 50px;
+  left:0px;
+  height: 20px;
+  width: 220px;
+  color: #2E1AA8;
+  font-family: "Acumin Pro";
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 10px;
+}
+
+.finished{
+  height: 568px;	
+  width: 1024px;	
+  background-color: rgba(46,26,168,0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.finishCircle{
+  transform: scale(2);
+  background-color: rgba(0,0,0,0);
+}
+
+.finishCircleFill{
+  height:202px;
+  width: 202px;
+  position: absolute;
+  background-color: rgba(46,26,168,0.65);
+  border-radius:100%;
+  position:absolute;
+  top: 176px;
+  left: 406px;
+  color:rgba(255,255,255,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+}
+.finishBar, .finishFill{
+  border-color: white !important;
+}
+.basicInfoThanks{
+  position:absolute;
+  color:white;
+  top: 450px;
+  width:1024px;
+  left:0px;
+  text-align: center;
+  
+}
+.finishHeader{
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  
+}
+.finishClose{
+  left: 985px;
+position: absolute;
+top: 15px;
+z-index: 10;
+}
+body{
+  background-color: #F6F6F6;
+}
+
+.skills-modal-content{
+  padding: 0;
+  height: 668px !important;
+}
+.skills-modal-header{
+  background-color:white;
+  padding:0;
+}
+.mySkillsLabel {
+  position: absolute;
+  height: 26px;
+  width: 1024px;
+	color: #2E1AA8 !important;
+	font-family: "Acumin Pro";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 26px;
+	text-align: center;
+}
+.skillsModalClose{
+  position: absolute;
+  left:980px;
+  margin-right:15px;
+  flex:1;
+}
+.statusBar {
+  position: absolute;
+	box-sizing: border-box;
+	height: 4px;
+	width: 61px;
+	border: 3px solid #2E1AA8;
+  margin-top:-17px;
+  border-radius:1px;
+}
+.statusBarOne{
+  width: 512px;
+}
+.statusBarTwo{
+  width: 1024px;
+}
+.col-md-12{
+  padding: 0px;
+
+}
+.descriptionRow{
+  padding: 0px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.mySkillsDescription{
+	height: 18px;
+	color: #000000;
+	font-family: "Acumin Pro";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+  text-align: center;
+}
+.skillsInput{
+  padding-left: 10px;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+
+}
+.skillsInputDiv{
+  margin-top: 25px;
+  /*border-bottom: 1px solid black;*/
+  padding: 0px;
+}
+.skillRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
+}
+.skillButton{
+   user-select: none;
+  border-radius: 5px;
+  border: 1px solid #2E1AA8;
+  height:60px;
+  	color: #2E1AA8;
+    font-family: "Acumin Pro";
+    font-size: 18px;
+    line-height: 14px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+.activeSkill{
+  background-color: #2E1AA8;
+  color: white;
+}
+
+.modal-content{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: -260px;
+  width: 1024px;
+  height: 568px;
+  background-color: #F6F6F6;
+}
+.mySkillsNext, .mySkillsFinish {
+  position: absolute;
+  left:460px;
+  top:485px;
+	height: 38.76px;
+	width: 89.64px;
+  background-color: #2E1AA8;
+	color: #B4FFDF;
+	font-family: "Acumin Pro";
+  padding-top:10px;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 17px;
+	text-align: center;
+  border: 0px;
+}
+.skillInputBar{
+  color: #A5A5A5;
+  width: 500px;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  border-bottom: 1px solid black;
+  padding-left: 10px;
+}
+.searchColumn{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.skillsList{
+  position: absolute;
+  left:212px;
+  top:125px;
+  width: 600px;
+  height:300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 25px; 
+}
+.skillsList p{
+  color: #2E1AA8;
+}
+.addSkillButton{
+  font-size: 24px;
+  margin-left: -24px;
+}
+
+
+.largeFontToggle:hover {
+  /*border: 1px solid black;*/
+  font-size: 18px;
+}

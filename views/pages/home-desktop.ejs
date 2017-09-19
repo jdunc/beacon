@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <title>BEACON - Disaster Relief Volunteer Platform</title>
+    <meta name="description" content="Beacon is a modern platform that connects citizen volunteers of all skills and backgrounds with the effective hands on relief agencies that need help during disasters.">
+    <meta name="google-signin-client_id" content="376004463646-7pt7rkejie6n4gr7dc8suspa1s2m95tr.apps.googleusercontent.com">
+
+    <!-- adobe fontkit -->
+    <script src="https://use.typekit.net/xho6okb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+    api_key:   86cqfimv60rbpi
+    authorize: 'true'
+</script>
+
+    <link rel="stylesheet" href="css/home-desktop.css">
+
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1727317440903912',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.10'
+        });
+        FB.AppEvents.logPageView();  
+        FB.getLoginStatus(function(response) {
+           statusChangeCallback(response);
+         }); 
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+       
+
+        function statusChangeCallback(response){
+          console.log(response);
+        }
+        
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+        
+        function fbLoggedIn(){
+          FB.api('/me', {fields: 'email,first_name,last_name,location'}, function(response) {
+            console.log(response);
+            $.ajax({
+              method: "POST",
+              url: "register",
+              data: { 
+                first_name: response.firstName,
+                last_name: response.lastName,
+                email: response.emailAddress,
+                social_id: response.id,
+                city: (typeof response.location.name !== undefined) ? response.location.name : null,
+                registration_type: 'facebook',
+              }
+            })
+            .done(function( data ) {
+              console.log( data[0] );
+              if(data[0].existingUser){
+                $('#emailRegisterModal, #loginModal').modal("hide");
+                $('.existingWelcome').text(`Welcome Back ${data[0].first_name}`)
+                $('#existingUserModal').modal("show");
+              }else{
+                $('#emailRegisterModal, #loginModal').modal("hide");
+                $('.newWelcome').text(`Thank you for joining our community ${data[0].first_name}`)
+                $('#successfulRegistrationModal').modal("show");
+              }
+            });
+          });
+        }
+        
+        function googleSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          $.ajax({
+            method: "POST",
+            url: "register",
+            data: { 
+              first_name: profile.getGivenName(),
+              last_name: profile.getFamilyName(),
+              email: profile.getEmail(),
+              social_id: profile.getId(),
+              registration_type: 'google',
+            }
+          })
+          .done(function( data ) {
+            console.log( data[0] );
+            if(data[0].existingUser){
+              $('#emailRegisterModal, #loginModal').modal("hide");
+              $('.existingWelcome').text(`Welcome Back ${data[0].first_name}`)
+              $('#existingUserModal').modal("show");
+            }else{
+              $('#emailRegisterModal, #loginModal').modal("hide");
+              $('.newWelcome').text(`Thank you for joining our community ${data[0].first_name}`)
+              $('#successfulRegistrationModal').modal("show");
+            }
+          });
+        }
+    </script>
+<div class="container">
+  <div class="header">
+      <img class="brand-logo" src="./img/beacon-logo.png" alt="">
+      <button type="button" class="about largeFontToggle">ABOUT</button>
+      <button type="button" class="login largeFontToggle" data-toggle="modal" data-target="#loginModal">LOG IN</button>
+      <button type="button" class="beacon largeFontToggle" data-toggle="modal" data-target="#registerModal">BECOME A BEACON</button>
+  </div>
+  <div class="content">
+    <div class="title">
+      <!-- <div class="textPaddingColor"></div> -->
+      <h1 class="titleText">What can you do to help with Harvey aftermath?</h1>
+    </div>
+    <button type="button" class="learnMore largeFontToggle">LEARN MORE</button>
+      <img class="articleImage" src="./img/articleImage.jpg" alt="">
+  </div>
+  <div class="gray-background"></div>
+</div>
+
+
+<!-- register modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="googleSignup">
+          <!-- <img class="googleLogo" src="./img/google.svg" alt="">
+          <p class="googleText">
+            Sign Up With Google
+          </p> -->
+          <div class="g-signin2" data-width="300" data-height="54" data-longtitle="true" data-onsuccess="googleSignIn"></div>
+        </div>
+        <div class="facebookSignup">
+          <!-- <img class="fblogo" src="./img/facebook.svg" alt="">
+          <p class="fbText">
+            Sign Up With Facebook
+          </p> -->
+          <div class="fb-login-button" data-scope="user_location,public_profile,email" onlogin="fbLoggedIn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true" data-width="290px"></div>
+        </div>
+        <div class="linkedinSignup">
+          <img class="linkedinlogo" src="./img/linkedin.svg" alt="">
+          <p class="linkedinText">
+            Sign Up With LinkedIn
+          </p>
+        </div>
+          <p class="emailSignup">
+            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#emailRegisterModal">Sign Up With Email</a>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end register modal -->
+
+<!-- login modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="googleSignup">
+          <img class="googleLogo" src="./img/google.svg" alt="">
+          <p class="googleText">
+            Log In With Google
+          </p>
+        </div>
+        <div class="facebookSignup">
+          <img class="fblogo" src="./img/facebook.svg" alt="">
+          <p class="fbText">
+            Log In With Facebook
+          </p>
+        </div>
+        <div class="linkedinSignup">
+          <img class="linkedinlogo" src="./img/linkedin.svg" alt="">
+          <p class="linkedinText">
+            Log In With LinkedIn
+          </p>
+        </div>
+          <p class="emailSignup">
+            <a href="#">Log In With Email</a>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end login modal -->
+
+<!-- email register modal -->
+<div class="modal fade" id="emailRegisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form">
+          <input class="firstname" type="text" name="" value="" placeholder="First Name">
+          <input class="lastname" type="text" name="" value="" placeholder="Last Name">
+          <input class="emailAddress" type="text" name="" value="" placeholder="Email Address">
+          <input class="password" type="password" name="" value="" placeholder="********">
+          <button type="button" class="submitEmailForm">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end email register modal -->
+
+<!-- successful register modal -->
+<div class="modal fade" id="successfulRegistrationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="successBody">
+          <h1 class="successHeading newWelcome">
+            Thank you for joining our community!
+          </h1>
+          <br>
+          <h4 class="successHeading"> 
+            please continue to help by sharing a bit more about yourself with our certified disaster relief coordinators
+          </h4>
+          <br>
+          <h3 class="successHeading">
+            WELCOME ABOARD!
+          </h3>
+          <br>
+          <button type="button" class="addToProfile largeFontToggle" >ADD TO PROFILE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end successful register modal -->
+
+<!-- existing member modal -->
+<div class="modal fade" id="existingUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="successBody">
+          <h1 class="successHeading existingWelcome">
+            Welcome Back!
+          </h1>
+          <br>
+          <h4 class="successHeading">
+            please continue to help by sharing a bit more about yourself with our certified disaster relief coordinators
+          </h4>
+          <br>
+          <button type="button" class="addToProfile largeFontToggle" >ADD TO PROFILE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end successful register modal -->
+
+  </body>
+  <script>
+  $( document ).ready(()=>{
+    $('.linkedinSignup').click(()=>{
+      console.log('clicked linkedin signup');
+      IN.User.authorize(function(){
+        getProfileData();
+      });
+    });
+    // Setup an event listener to make an API call once auth is complete
+    function onLinkedInLoad() {
+      IN.Event.on(IN, "auth", getProfileData);
+    }
+    
+    // Handle the successful return from the API call
+    function onSuccess(data) {
+      console.log('linkedin api data: ', data);
+      $.ajax({
+        method: "POST",
+        url: "register",
+        data: { 
+          first_name: data.values[0].firstName,
+          last_name: data.values[0].lastName,
+          email: data.values[0].emailAddress,
+          registration_type: 'linkedin',
+        }
+      })
+      .done(function( data ) {
+        console.log( data[0] );
+        if(data[0].existingUser){
+          $('#emailRegisterModal, #loginModal').modal("hide");
+          $('.existingWelcome').text(`Welcome Back ${data[0].first_name}`)
+          $('#existingUserModal').modal("show");
+        }else{
+          $('#emailRegisterModal, #loginModal').modal("hide");
+          $('.newWelcome').text(`Thank you for joining our community ${data[0].first_name}`)
+          $('#successfulRegistrationModal').modal("show");
+        }
+      });
+      
+    }
+    
+    // Handle an error response from the API call
+    function onError(error) {
+      console.log(error);
+    }
+    
+    // Use the API call wrapper to request the member's basic profile data
+    function getProfileData() {
+      IN.API.Profile("me").fields("first-name", "last-name", "email-address", "id").result(onSuccess).error(onError);
+    }
+  
+    $('.addToProfile').click(()=>{
+      window.location = "./profile";
+    })
+  
+  });
+    
+  </script>
+</html>

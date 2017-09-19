@@ -2,7 +2,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/virtual-museum'
+    connection: 'postgres://localhost/beacondev'
   },
   production: {
     client: 'pg',
